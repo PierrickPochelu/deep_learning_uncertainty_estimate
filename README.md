@@ -56,9 +56,12 @@ URL: https://proceedings.neurips.cc/paper/2017/file/9ef2ed4b7fd2c810847ffa5fa85b
 <table>
 
 ## MC-dropout
+
  RL: https://arxiv.org/pdf/1506.02142.pdf
-MC-droupout. The dropout is varied (50%, 5%, 0.5%, 0.2%) and the number of averaged predictions (4, 8, 16, 32).
-  <table>
+
+ The dropout is varied (50%, 5%, 0.5%, 0.2%) and the number of averaged predictions (4, 8, 16, 32).
+ 
+ <table>
     <tr>
     <th>Method</th>
     <th>#Training</th>
@@ -100,28 +103,38 @@ Deep variational inference with Tensorflow_Probability (TFP)
     <th>ECE</th>
     <th>Brier</th>
   </tr>
-
-<tr><td>1layer</td><td>1</td><td>4</td><td>0.554</td><td>0.1949</td><td>0.3989</td><td>0.5749</td></tr>
-<tr><td>1layer</td><td>1</td><td>16</td><td>0.5587</td><td>0.1942</td><td>0.404</td><td>0.5729</td></tr>
-<tr><td>1layer TFP</td><td>1</td><td>64</td><td>0.5416</td><td>0.2017</td><td>nan</td><td>0.5971</td></tr>
-<tr><td>2layers TFP</td><td>1</td><td>4</td><td>0.5537</td><td>0.1956</td><td>nan</td><td>0.577</td></tr>
-<tr><td>2layers TFP</td><td>1</td><td>16</td><td>0.5556</td><td>0.1951</td><td>nan</td><td>0.5756</td></tr>
-<tr><td>2layers TFP</td><td>1</td><td>64</td><td>0.5579</td><td>0.195</td><td>nan</td><td>0.575</td></tr>
+<tr><td>1layers</td><td>1</td><td>4</td><td>0.5268</td><td>0.2046</td><td>0.3786</td><td>0.605</td></tr>
+<tr><td>1layers</td><td>1</td><td>16</td><td>0.5278</td><td>0.2037</td><td>0.3799</td><td>0.6021</td></tr>
+<tr><td>1layers TFP</td><td>1</td><td>64</td><td>0.53</td><td>0.2036</td><td>0.3822</td><td>0.6019</td></tr>
+ <tr><td>2layers</td><td>1</td><td>4</td><td>0.554</td><td>0.1949</td><td>0.3989</td><td>0.5749</td></tr>
+<tr><td>2layers</td><td>1</td><td>16</td><td>0.5587</td><td>0.1942</td><td>0.404</td><td>0.5729</td></tr>
+<tr><td>2layers</td><td>1</td><td>64</td><td>0.561</td><td>0.194</td><td>0.4064</td><td>0.5722</td></tr>
 </table> 
 
+Tensorflow Probability beat the standard CNN. However, the comparison is not fully fair due to the fact the number of parameters is multiplied by 2 on the TFP laters (to model variance and bias). 
  
 ## Temperature scaling (TS)
  
  URL: :https://arxiv.org/pdf/1706.04599.pdf
- The validation/training split is varyied (r= 10%, 1%, 0.1%)
+ 
+ The validation/training split is varyied (r= 10%, 1%, 0.1%). We calibrate the temperature based on the CE validation minimization.
  
 <table>
+   <tr>
+    <th>Method</th>
+    <th>#Training</th>
+    <th>#Predicting</th>
+    <th>Accuracy</th>
+    <th>Cross entropy</th>
+    <th>ECE</th>
+    <th>Brier</th>
+  </tr>
 <tr>TS r=0.1<td>0.1</td><td>1</td><td>1</td><td>0.548</td><td>0.2585</td><td>0.4319</td><td>0.7265</td></tr>
 <tr>TS r=0.01<td>0.01</td><td>1</td><td>1</td><td>0.5193</td><td>0.2612</td><td>0.4016</td><td>0.732</td></tr>
 <tr>TS r=0.001<td>0.001</td><td>1</td><td>1</td><td>0.5665</td><td>0.2545</td><td>0.4494</td><td>0.7144</td></tr>
 </table>
- 
-Compared to the standard CNN, ECE score is better but not the Brier. The ensemble of 16 have also a lower ECE than TS with r=0.001.
+
+ECE score is strongest measrured and the Brier score is the weakest measured here. More investigation seems required here.
  
  ## Conclusion
 Ensemble of Deep Neural Network seems the best method to build accuracy/uncertainty prediction at a given inference cost. However, they require to multiply the training time.

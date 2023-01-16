@@ -70,7 +70,7 @@ URL: https://proceedings.neurips.cc/paper/2017/file/9ef2ed4b7fd2c810847ffa5fa85b
 <tr><td>MC-drop rate=0.5</td><td>1</td><td>4</td><td>0.4713</td><td>0.2244</td><td>0.6615</td></tr>
 <tr><td>MC-drop rate=0.5</td><td>1</td><td>8</td><td>0.4746</td><td>0.2227</td><td>0.6567</td></tr>
 <tr><td>MC-drop rate=0.5</td><td>1</td><td>16</td><td>0.4777</td><td>0.2219</td><td>0.6542</td></tr>
-<tr><td>MC-drop rate=0.5</td><td>1</td><td>32</td><td>0.4765</td><td>0.2216</td<td>0.6532</td></tr>
+  <tr><td>MC-drop rate=0.5</td><td>1</td><td>32</td><td>0.4765</td><td>0.2216</td><td>0.6532</td></tr>
 <tr><td>MC-drop rate=0.05</td><td>1</td><td>4</td><td>0.5496</td><td>0.195</td><td>0.5783</td></tr>
 <tr><td>MC-drop rate=0.05</td><td>1</td><td>8</td><td>0.548</td><td>0.1948</td><td>0.5777</td></tr>
 <tr><td>MC-drop rate=0.05</td><td>1</td><td>16</td><td>0.5503</td><td>0.1947</td><td>0.5772</td></tr>

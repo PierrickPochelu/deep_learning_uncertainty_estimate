@@ -1,6 +1,6 @@
 # deep_learning_uncertainty_estimate
 
-The arrow symbol '&#8593;' or '&#8595;' indicates if the metric should be maximized ('&#8593;') or minimized ('&#8595;').
+The arrow symbol '&#8593;' or '&#8595;' indicates if the metric should be maximized ('&#8593;') or minimized ('&#8595;'). For fair comparison the neural architecture is similar for each assessed method.
 
 ## Standard CNN
  <table>
